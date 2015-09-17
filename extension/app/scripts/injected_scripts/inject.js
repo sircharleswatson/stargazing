@@ -24,7 +24,7 @@ function ready() {
 function ignoringPage() {
     var pageUrl = window.location.protocol + "//" + window.location.host;
     var ignore = [
-        /localhost/ig,
+        // /localhost/ig,
         /meteor-showers\.meteor\.com/ig,
         /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/ig
     ];
