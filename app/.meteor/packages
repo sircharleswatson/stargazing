@@ -18,3 +18,5 @@ ejson
 spacebars
 check
 ecmascript
+reactive-var
+reactive-dict

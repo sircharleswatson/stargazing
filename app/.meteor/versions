@@ -44,6 +44,7 @@ observe-sequence@1.0.7-rc.0
 ordered-dict@1.0.4-rc.0
 promise@0.4.8-rc.0
 random@1.0.4-rc.0
+reactive-dict@1.1.1-rc.0
 reactive-var@1.0.6-rc.0
 reload@1.1.4-rc.0
 retry@1.0.4-rc.0
