@@ -1,0 +1,3 @@
+Stargazing.Components.layouts = {
+    App
+}
