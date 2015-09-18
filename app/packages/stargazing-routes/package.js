@@ -1,16 +1,11 @@
 Package.describe({
-  name: 'stargazing:app',
+  name: 'stargazing:routes',
   version: '0.0.0',
   // Brief, one-line summary of the package.
-  summary: 'Stargazing app Umbrella Package'
+  summary: 'Routes package for Stargazing app',
 });
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2-rc.15');
   api.use('ecmascript');
-
-  api.imply([
-    'stargazing:core',
-    'stargazing:routes'
-  ])
 });
