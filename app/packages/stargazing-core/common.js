@@ -4,11 +4,12 @@
  */
 
 Stargazing = {
+    // Meteor Mongo Collections
+    Collections: {},
+    Components: {},
     Constants: {},
     // small reusable utilities
-    Utils: {},
-    // Meteor Mongo Collections
-    Collections: {}
+    Utils: {}
 };
 
 const global = this;
