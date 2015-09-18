@@ -9,8 +9,12 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2-rc.15');
   api.use('ecmascript');
 
-  api.imply([
+  var packages = [
     'stargazing:core',
-    'stargazing:routes'
-  ])
+    'stargazing:routes',
+    'stargazing:components'
+  ]
+
+  api.use(packages)
+  api.imply(packages)
 });
