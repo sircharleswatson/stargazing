@@ -11,7 +11,7 @@ Package.describe({
 })
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.2-rc.15')
+  api.versionsFrom('1.2-rc.17')
   api.use(['ecmascript', 'react'])
 
   api.addFiles('layouts/app.jsx')

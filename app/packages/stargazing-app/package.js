@@ -6,13 +6,15 @@ Package.describe({
 })
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.2-rc.15')
+  api.versionsFrom('1.2-rc.17')
   api.use('ecmascript')
 
   var packages = [
-    'stargazing:core',
-    'stargazing:routes',
-    'stargazing:components'
+    'stargazing:core@0.0.0',
+    'stargazing:auth@0.0.0',
+    'stargazing:routes@0.0.0',
+    'stargazing:components@0.0.0',
+    'stargazing:accounts@0.0.0'
   ]
 
   api.use(packages)
