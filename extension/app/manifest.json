@@ -32,12 +32,15 @@
   ],
 
   "page_action": {
+    "scripts": [
+      "bower_components/jquery/dist/jquery.min.js"
+    ],
     "default_icon": {
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
     },
     "default_title": "Meteor Hunters",
-    "default_popup": ""
+    "default_popup": "popup.html"
   },
 
   "permissions": [
