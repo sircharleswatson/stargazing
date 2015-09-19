@@ -2,11 +2,11 @@ Package.describe({
   name: 'stargazing:routes',
   version: '0.0.0',
   // Brief, one-line summary of the package.
-  summary: 'Routes package for Stargazing app',
-});
+  summary: 'Routes package for Stargazing app'
+})
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.2-rc.15');
+  api.versionsFrom('1.2-rc.15')
 
   var packages = [
     'ecmascript',
@@ -15,9 +15,9 @@ Package.onUse(function(api) {
     'stargazing:components'
   ]
 
-  api.use(packages);
+  api.use(packages)
 
   api.addFiles([
     'lib/routes.jsx'
   ], 'client')
-});
+})

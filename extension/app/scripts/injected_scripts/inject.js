@@ -1,42 +1,44 @@
 var checkReadyState = setInterval(function() {
 
-    if (!ready()) return;
+  if (!ready()) {
+    return
+  }
 
-    clearInterval(checkReadyState);
+  clearInterval(checkReadyState)
 
-    if (ignoringPage()) return;
+  if (ignoringPage()) {
+    return
+  }
 
-    chrome.runtime.sendMessage("test message");
+  chrome.runtime.sendMessage('test message')
 
-
-
-}, 10);
+}, 10)
 
 
 function ready() {
-    if (document.readyState === "complete") {
-        return true;
-    }
+  if (document.readyState === 'complete') {
+    return true
+  }
 
-    return false;
+  return false
 }
 
 function ignoringPage() {
-    var pageUrl = window.location.protocol + "//" + window.location.host;
-    var ignore = [
-        // /localhost/ig,
-        /meteor-showers\.meteor\.com/ig,
-        /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/ig
-    ];
+  var pageUrl = window.location.protocol + '//' + window.location.host
+  var ignore = [
+    // /localhost/ig,
+    /meteor-showers\.meteor\.com/ig,
+    /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/ig
+  ]
 
-    for(var i=0; i<ignore.length; i++){
-        if(ignore[i].exec(pageUrl)){
-            console.log('ignoring', pageUrl);
-            return true;
-        }
+  for(var i=0; i<ignore.length; i++){
+    if(ignore[i].exec(pageUrl)){
+      console.log('ignoring', pageUrl)
+      return true
     }
+  }
 
-    return false;
+  return false
 }
 
 

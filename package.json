@@ -1,6 +1,6 @@
 {
-    "name": "Stargazing",
-    "scripts": {
-        "start": "cd extension && grunt debug --force & cd app && meteor"
-    }
+  "name": "Stargazing",
+  "scripts": {
+    "start": "cd extension && grunt debug --force & cd app && meteor"
+  }
 }
