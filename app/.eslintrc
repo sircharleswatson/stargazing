@@ -5,7 +5,8 @@
 
         // Globals from other packages
         "React": false,
-        "ReactRouter": false
+        "ReactRouter": false,
+        "ReactMeteorData": false
     },
     "rules": {
         "react/display-name": 1,

@@ -1,13 +1,30 @@
-App = React.createClass({
-  displayName: 'App',
-  propTypes: {
-    children: React.PropTypes.element.isRequired
+const { LoginForm } = Stargazing.AccountForms
+const { Auth } = Stargazing.Utils
+
+App = React.createClass({ displayName: 'App',
+  mixins: [ReactMeteorData],
+
+  getMeteorData() {
+    return {
+      currentUser: Meteor.user(),
+      loggedIn: Auth.loggedIn()
+    }
+  },
+
+  showForm() {
+    if (this.data.currentUser) {
+      return <p>Logged In</p>
+    }
+
+    return <LoginForm />
   },
 
   render() {
     return (
       <div>
-        <main>{this.props.children}</main>
+        <main>
+          {this.showForm()}
+        </main>
       </div>
     )
   }
