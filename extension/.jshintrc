@@ -17,8 +17,11 @@
   "undef": true,
   "unused": true,
   "strict": true,
+  "asi": true,
+  "latedef": "nofunc",
   "globals" : {
     "chrome": true,
-    "crypto": true
+    "crypto": true,
+    "Asteroid": false
   }
 }
