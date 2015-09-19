@@ -1,0 +1,3 @@
+AccountForms = {}
+
+Stargazing['AccountForms'] = AccountForms
