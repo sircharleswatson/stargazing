@@ -1,35 +1,64 @@
 AccountForms['LoginForm'] = React.createClass({
   displayName: 'Login Form',
 
+  getInitialState() {
+    return {
+      emailInput: '',
+      passwordInput: ''
+    }
+  },
+
+  handleChange(e) {
+    var newState = {}
+    newState[e.target.id] = e.target.value
+
+    this.setState(newState)
+  },
+
   handleSubmit(event) {
     event.preventDefault()
-    // retrieve the input field values
-    var email = React.findDOMNode(this.refs.email).value.trim()
-    var password = React.findDOMNode(this.refs.password).value.trim()
 
-    // Trim and validate your fields here....
+    // retrieve the input field values
+    let {
+      emailInput,
+      passwordInput
+    } = this.state
+
+    check(emailInput, String)
+    check(passwordInput, String)
 
     // If validation passes, supply the appropriate fields to the
     // Meteor.loginWithPassword() function.
-    Meteor.loginWithPassword(email, password, function(err){
+    Meteor.loginWithPassword(emailInput, passwordInput, (err) => {
       if (err) {
         // The user might not have been found, or their passwword
         // could be incorrect. Inform the user that their
         // login attempt has failed.
-        console.log('No user found')
-      } else {
-        // The user has been logged in.
+        console.log('Login attempt failed')
       }
+
+      console.log('after login')
+
+      this.setState({
+        emailInput: '',
+        passwordInput: ''
+      }, function() {
+        React.findDOMNode(this.refs.email).focus()
+      })
     })
 
   },
 
   render() {
     return (
-      <form id="login-form" onSubmit={this.handleSubmit}>
+      <form id="login-form"
+          onChange={this.handleChange}
+          onSubmit={this.handleSubmit}>
         <div>
-          <input type="email" ref="email" id="login-email" />
-          <input type="password" ref="password" id="login-password" />
+          <input type="email" ref="email" id="emailInput"
+              value={this.state.emailInput} />
+          <input type="password" ref="password" id="passwordInput"
+              value={this.state.passwordInput} />
           <input type="submit" ref="login-button" id="login-button" value="Sign in" />
         </div>
       </form>
