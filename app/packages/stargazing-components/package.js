@@ -11,6 +11,5 @@ Package.onUse(function(api) {
 
   api.imply([
     'stargazing:accounts',
-    'stargazing:layouts@0.0.0'
   ])
 })
