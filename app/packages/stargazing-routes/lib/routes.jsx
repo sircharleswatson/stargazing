@@ -4,7 +4,7 @@ const history = ReactRouter.history.useQueries(ReactRouter.history.createHistory
 
 const {
   App
-} = Stargazing.Components.layouts
+} = Stargazing.Components.Layouts
 
 Meteor.startup(function() {
   React.render((

@@ -76,7 +76,6 @@ stargazing:app@0.0.0
 stargazing:auth@0.0.0
 stargazing:components@0.0.0
 stargazing:core@0.0.0
-stargazing:layouts@0.0.0
 stargazing:routes@0.0.0
 templating@1.1.2
 templating-tools@1.0.0
