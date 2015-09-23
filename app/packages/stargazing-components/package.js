@@ -20,11 +20,11 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'lib/forms/register.jsx',
-    'lib/forms/auth/auth-box.jsx',
     'lib/forms/auth/services-signin.jsx',
     'lib/forms/auth/services-register.jsx',
     'lib/forms/auth/username-signin.jsx',
-    'lib/forms/auth/username-register.jsx'
+    'lib/forms/auth/username-register.jsx',
+    'lib/forms/auth/auth-box.jsx'
   ])
 
   api.addFiles([

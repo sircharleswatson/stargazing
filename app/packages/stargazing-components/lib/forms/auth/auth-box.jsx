@@ -1,3 +1,7 @@
+const {
+  UsernameSignin
+} = Stargazing.Components.Forms.Auth
+console.log(UsernameSignin)
 let AuthBox = React.createClass({
   displayName: 'AuthBox',
 

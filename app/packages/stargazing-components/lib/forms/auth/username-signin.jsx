@@ -66,4 +66,4 @@ let UsernameSignin = React.createClass({
   }
 })
 
-Stargazing.Components.Forms.UsernameSignin = UsernameSignin
+Stargazing.Components.Forms.Auth.UsernameSignin = UsernameSignin
