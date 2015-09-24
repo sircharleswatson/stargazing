@@ -19,7 +19,5 @@ spacebars
 check
 
 # Application specific packages
-ecmascript
-reactive-var
-reactive-dict
+
 stargazing:app
