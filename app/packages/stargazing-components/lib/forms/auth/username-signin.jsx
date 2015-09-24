@@ -59,7 +59,9 @@ let UsernameSignin = React.createClass({
               value={this.state.emailInput} />
           <input type="password" ref="password" id="passwordInput"
               value={this.state.passwordInput} />
-          <input type="submit" ref="login-button" id="login-button" value="Sign in" />
+          <button type="submit" ref="login-button" id="login-button" className="ui button">
+            Sign in
+          </button>
         </div>
       </form>
     )
