@@ -15,17 +15,16 @@ Package.onUse(function(api) {
 
   api.use([
     'ecmascript',
-    'flemay:less-autoprefixer@1.1.0',
-    'semantic:ui@2.1.4'
+    'less',
+    'semantic:ui-charles@2.1.4'
   ])
 
-  // var clientThemeFiles = getFilesFromFolder('stargazing-styles', 'client/lib/semantic-ui/themes')
-  // api.addFiles(clientThemeFiles, 'client')
-
-  var clientDefinitionFiles = getFilesFromFolder('stargazing-styles', 'client/lib/semantic-ui/definitions')
-  api.addFiles(clientDefinitionFiles, 'client')
-
+  var clientThemeFiles = getFilesFromFolder('stargazing-styles', 'client/lib/semantic-ui/themes')
   var clientSiteFiles = getFilesFromFolder('stargazing-styles', 'client/lib/semantic-ui/site')
+  var clientDefinitionFiles = getFilesFromFolder('stargazing-styles', 'client/lib/semantic-ui/definitions')
+
+  api.addFiles(clientThemeFiles, 'client')
+  api.addFiles(clientDefinitionFiles, 'client')
   api.addFiles(clientSiteFiles, 'client')
 
   api.addFiles('client/lib/semantic-ui/semantic.less', 'client')
