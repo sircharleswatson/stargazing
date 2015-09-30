@@ -16,18 +16,12 @@ Package.onUse(function(api) {
     'stargazing:accounts'
   ])
 
-  api.addFiles('lib/components-list.jsx')
+  setTimeout(function() {
+    packageFolder('stargazing-components', api)
 
-  api.addFiles([
-    'lib/forms/register.jsx',
-    'lib/forms/auth/services-signin.jsx',
-    'lib/forms/auth/services-register.jsx',
-    'lib/forms/auth/username-signin.jsx',
-    'lib/forms/auth/username-register.jsx',
-    'lib/forms/auth/auth-box.jsx'
-  ])
-
-  api.addFiles([
-    'lib/layouts/app.jsx'
-  ])
+    addFiles('lib/components-list.jsx')
+    addFiles('lib/forms/**/!(auth-box).jsx')
+    addFiles('lib/forms/**/auth-box.jsx')
+    addFiles('lib/layouts/**.*')
+  }, 500)
 })
