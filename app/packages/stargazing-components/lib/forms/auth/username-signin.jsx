@@ -1,68 +1,46 @@
 let UsernameSignin = React.createClass({
   displayName: 'Username Signin',
 
-  getInitialState() {
-    return {
-      emailInput: '',
-      passwordInput: ''
-    }
-  },
-
-  handleChange(e) {
-    var newState = {}
-    newState[e.target.id] = e.target.value
-
-    // this.setState(newState)
+  handleChange() {
+    this.props.onInputChange(
+      this.refs.email.getDOMNode().value,
+      this.refs.password.getDOMNode().value
+    )
   },
 
   handleSubmit(event) {
     event.preventDefault()
 
-    // retrieve the input field values
-    let {
-      emailInput,
-      passwordInput
-    } = this.state
-
-    check(emailInput, String)
-    check(passwordInput, String)
-
-    // If validation passes, supply the appropriate fields to the
-    // Meteor.loginWithPassword() function.
-    Meteor.loginWithPassword(emailInput, passwordInput, (err) => {
-      if (err) {
-        // The user might not have been found, or their passwword
-        // could be incorrect. Inform the user that their
-        // login attempt has failed.
-        console.log('Login attempt failed')
-      }
-
-      console.log('after login')
-
-      // this.setState({
-      //   emailInput: '',
-      //   passwordInput: ''
-      // }, function() {
-      //   React.findDOMNode(this.refs.email).focus()
-      // })
-    })
-
+    console.log('Will pass the signin submit message to the parent')
+    this.props.onFormSubmit()
   },
 
   render() {
     return (
-      <form id="login-form"
-          onChange={this.handleChange}
+      <form id="login-form" className="ui form"
           onSubmit={this.handleSubmit}>
-        <div>
-          <input type="email" ref="email" id="emailInput"
-              value={this.state.emailInput} />
-          <input type="password" ref="password" id="passwordInput"
-              value={this.state.passwordInput} />
-          <button type="submit" ref="login-button" id="login-button" className="ui button">
-            Sign in
-          </button>
+        <div className="required field">
+          <div className="ui left corner labeled input">
+            <input type="email" placeholder="Email" ref="email" onChange={this.handleChange}
+                value={this.props.email} />
+            <div className="ui left corner label">
+            <i className="asterisk icon"></i>
+            </div>
+          </div>
         </div>
+        <div className="required field">
+          <div className="ui left corner labeled input">
+            <input type="password" placeholder="Password" ref="password" onChange={this.handleChange}
+                value={this.props.password} />
+            <div className="ui left corner label">
+            <i className="asterisk icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" ref="login-button" id="login-button" className="ui fluid button">
+          Sign in
+        </button>
       </form>
     )
   }

@@ -1,3 +1,0 @@
-AccountForms = {}
-
-Stargazing['AccountForms'] = AccountForms

@@ -67,15 +67,14 @@ retry@1.0.4
 routepolicy@1.0.6
 semantic:ui-charles@2.1.4
 semantic:ui-data-charles@2.1.4
+semantic:ui-icon@2.1.4
 service-configuration@1.0.5
 sha@1.0.4
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 srp@1.0.4
 standard-minifiers@1.0.0
-stargazing:accounts@0.0.0
 stargazing:app@0.0.0
-stargazing:auth@0.0.0
 stargazing:components@0.0.0
 stargazing:core@0.0.0
 stargazing:routes@0.0.0

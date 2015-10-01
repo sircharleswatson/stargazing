@@ -1,4 +1,3 @@
-const { Auth } = Stargazing.Utils
 const { AuthBox } = Stargazing.Components.Forms.Auth
 
 App = React.createClass({ displayName: 'App',
@@ -6,23 +5,27 @@ App = React.createClass({ displayName: 'App',
 
   getMeteorData() {
     return {
-      currentUser: Meteor.user(),
-      loggedIn: Auth.loggedIn()
+      currentUserId: Meteor.userId(),
+      loggingIn: Meteor.loggingIn()
     }
   },
 
   showForm() {
-    if (this.data.currentUser) {
-      return <p>Logged In</p>
+    if (this.data.loggingIn) {
+      return <p>Loading...</p>
     }
 
-    return <AuthBox />
+    if (!this.data.currentUserId) {
+      return <AuthBox />
+    }
+
+    return <p>Logged In</p>
   },
 
   render() {
     return (
-      <div>
-        <main>
+      <div className="main-container">
+        <main className="ui three column stackable page grid">
           {this.showForm()}
         </main>
       </div>

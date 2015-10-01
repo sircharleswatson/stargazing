@@ -16,15 +16,16 @@ Package.onUse(function(api) {
   api.use([
     'ecmascript',
     'less',
-    'semantic:ui-charles@2.1.4'
+    'semantic:ui-charles@2.1.4',
+    'semantic:ui-icon@2.1.4'
   ])
 
   setTimeout(function() {
     packageFolder('stargazing-styles', api)
 
-    addFiles('client/lib/semantic-ui/themes/**/*.*', 'client');
-    addFiles('client/lib/semantic-ui/+(definitions|site)/**/*.*', 'client');
-    addFiles('client/lib/semantic-ui/!(definitions|site|themes)', 'client');
+    addFiles('client/lib/semantic-ui/themes/**/*.*', 'client')
+    addFiles('client/lib/semantic-ui/+(definitions|site)/**/*.*', 'client')
+    addFiles('client/lib/semantic-ui/!(definitions|site|themes)', 'client')
   }, 500)
 
 })

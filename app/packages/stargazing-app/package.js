@@ -12,9 +12,7 @@ Package.onUse(function(api) {
   var packages = [
     'stargazing:core@0.0.0',
     'stargazing:styles@0.0.0',
-    'stargazing:auth@0.0.0',
     'stargazing:routes@0.0.0',
-    'stargazing:accounts@0.0.0',
     'stargazing:components@0.0.0'
   ]
 
