@@ -8,6 +8,7 @@ let ServicesAuth = React.createClass({
 
   propTypes: {
     action: React.PropTypes.string,
+    onServiceClick: React.PropTypes.func,
     services: React.PropTypes.arrayOf(React.PropTypes.shape({
       name: React.PropTypes.string,
       buttonClass: React.PropTypes.string
@@ -16,9 +17,9 @@ let ServicesAuth = React.createClass({
 
   showButtons() {
     if (this.props.action === "signin") {
-      return <ServicesSignin services={this.props.services}/>
+      return <ServicesSignin services={this.props.services} onServiceClick={this.props.onServiceClick} />
     } else {
-      return <ServicesRegister services={this.props.services}/>
+      return <ServicesRegister services={this.props.services} onServiceClick={this.props.onServiceClick}/>
     }
   },
 

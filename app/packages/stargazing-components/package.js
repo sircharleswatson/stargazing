@@ -11,7 +11,11 @@ Package.onUse(function(api) {
     "ecmascript",
     "react",
     "accounts-base",
-    "accounts-password"
+    "accounts-password",
+    "accounts-google",
+    "accounts-twitter",
+    "accounts-facebook",
+    "service-configuration"
   ])
 
   setTimeout(function() {
@@ -23,5 +27,6 @@ Package.onUse(function(api) {
     addFiles("lib/forms/**/services-auth.jsx")
     addFiles("lib/forms/**/auth-box.jsx")
     addFiles("lib/layouts/**.*")
+    addFiles("service-config.js", "server")
   }, 100)
 })

@@ -56,6 +56,10 @@ let AuthBox = React.createClass({
     })
   },
 
+  handleServiceClick(service) {
+    this.serviceSignin(service)
+  },
+
   userSignin() {
     Meteor.loginWithPassword(this.state.email, this.state.password, function(error) {
       console.log("Error: ", error)
@@ -76,12 +80,35 @@ let AuthBox = React.createClass({
     })
   },
 
+  serviceSignin(service) {
+    console.log("sign in with service", service)
+
+    if (service === "Google") {
+      Meteor.loginWithGoogle("popup", function(error) {
+        console.log("Service Login Error: ", error)
+      })
+    }
+
+    if (service === "Twitter") {
+      Meteor.loginWithTwitter("popup", function(error) {
+        console.log("Service Login Error: ", error)
+      })
+    }
+
+    if (service === "Facebook") {
+      
+      Meteor.loginWithFacebook("popup", function(error) {
+        console.log("Service Login Error: ", error)
+      })
+    }
+  },
+
   render() {
     return (
       <div ref="authBox" className="ui centered eight wide column">
         <div className="ui form segment">
           <h2 className="ui center aligned dividing header">{this.getTitle()}</h2>
-          <ServicesAuth action={this.state.action} services={this.getServices()}/>
+          <ServicesAuth action={this.state.action} services={this.getServices()} onServiceClick={this.handleServiceClick} />
           <div className="ui horizontal divider">OR</div>
           <UsernameAuth action={this.state.action} email={this.state.email} password={this.state.password} onInputChange={this.handleInput} onFormSubmit={this.handleFormSubmit}/>
           <AuthState action={this.state.action} onActionChange={this.handleActionChange}/>
