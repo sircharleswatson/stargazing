@@ -1,5 +1,12 @@
 ServicesSignin = React.createClass({
-  displayName: 'Services Signin',
+  displayName: "Services Signin",
+
+  propTypes: {
+    services: React.PropTypes.arrayOf(React.PropTypes.shape({
+      name: React.PropTypes.string,
+      buttonClass: React.PropTypes.string
+    }))
+  },
 
   renderServiceButtons() {
     return this.props.services.map((service, i) => {

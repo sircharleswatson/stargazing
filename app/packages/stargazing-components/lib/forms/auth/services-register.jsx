@@ -1,5 +1,12 @@
 ServicesRegister = React.createClass({
-  displayName: 'Services Register',
+  displayName: "Services Register",
+
+  propTypes: {
+    services: React.PropTypes.arrayOf(React.PropTypes.shape({
+      name: React.PropTypes.string,
+      buttonClass: React.PropTypes.string
+    }))
+  },
 
   renderServiceButtons() {
     return this.props.services.map((service, i) => {

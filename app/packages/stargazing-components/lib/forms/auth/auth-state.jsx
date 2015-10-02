@@ -1,5 +1,10 @@
 let AuthState = React.createClass({
-  displayName: 'Auth State',
+  displayName: "Auth State",
+
+  propTypes: {
+    action: React.PropTypes.string,
+    onActionChange: React.PropTypes.func
+  },
 
   changeAction(newAction, event) {
     event.preventDefault()
@@ -7,18 +12,18 @@ let AuthState = React.createClass({
   },
 
   getActionLink() {
-    if (this.props.action === 'signin') {
+    if (this.props.action === "signin") {
       return (
         <p>
           {"Don't have an account? "}
-          <a href="#" onClick={this.changeAction.bind(this, 'register')}>Register</a>
+          <a href="#" onClick={this.changeAction.bind(this, "register")}>Register</a>
         </p>
       )
     } else {
       return (
         <p>
           {"Already have an account? "}
-          <a href="#" onClick={this.changeAction.bind(this, 'signin')}>Sign In</a>
+          <a href="#" onClick={this.changeAction.bind(this, "signin")}>Sign In</a>
         </p>
       )
     }

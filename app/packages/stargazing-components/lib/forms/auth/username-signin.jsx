@@ -1,5 +1,12 @@
 let UsernameSignin = React.createClass({
-  displayName: 'Username Signin',
+  displayName: "Username Signin",
+
+  propTypes: {
+    email: React.PropTypes.string,
+    onFormSubmit: React.PropTypes.func,
+    onInputChange: React.PropTypes.func,
+    password: React.PropTypes.string
+  },
 
   handleChange() {
     this.props.onInputChange(
@@ -11,7 +18,7 @@ let UsernameSignin = React.createClass({
   handleSubmit(event) {
     event.preventDefault()
 
-    console.log('Will pass the signin submit message to the parent')
+    console.log("Will pass the signin submit message to the parent")
     this.props.onFormSubmit()
   },
 

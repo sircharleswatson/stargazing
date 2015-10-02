@@ -1,5 +1,12 @@
 let UsernameRegister = React.createClass({
-  displayName: 'Username Register',
+  displayName: "Username Register",
+
+  propTypes: {
+    email: React.PropTypes.string,
+    onFormSubmit: React.PropTypes.func,
+    onInputChange: React.PropTypes.func,
+    password: React.PropTypes.string
+  },
 
   handleChange() {
     this.props.onInputChange(
@@ -10,7 +17,7 @@ let UsernameRegister = React.createClass({
 
   handleSubmit(event) {
     event.preventDefault()
-    console.log('Will pass the register submit message to the parent')
+    console.log("Will pass the register submit message to the parent")
     this.props.onFormSubmit()
   },
 

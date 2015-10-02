@@ -1,6 +1,6 @@
 const { AuthBox } = Stargazing.Components.Forms.Auth
 
-App = React.createClass({ displayName: 'App',
+App = React.createClass({ displayName: "App",
   mixins: [ReactMeteorData],
 
   getMeteorData() {

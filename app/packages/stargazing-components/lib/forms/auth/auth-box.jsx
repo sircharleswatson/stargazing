@@ -5,35 +5,35 @@ const {
 } = Stargazing.Components.Forms.Auth
 
 let AuthBox = React.createClass({
-  displayName: 'AuthBox',
+  displayName: "AuthBox",
 
   getInitialState() {
     return {
-      action: 'signin',
-      email: '',
-      password: ''
+      action: "signin",
+      email: "",
+      password: ""
     }
   },
 
   getServices() {
     return [
-      {name: 'Google', buttonClass: 'google plus'},
-      {name: 'Facebook', buttonClass: 'facebook'},
-      {name: 'Twitter', buttonClass: 'twitter'}
+      {name: "Google", buttonClass: "google plus"},
+      {name: "Facebook", buttonClass: "facebook"},
+      {name: "Twitter", buttonClass: "twitter"}
     ]
   },
 
   getTitle() {
-    if (this.state.action === 'signin') {
-      return 'Sign In'
+    if (this.state.action === "signin") {
+      return "Sign In"
     } else {
-      return 'Register'
+      return "Register"
     }
   },
 
   handleActionChange(action) {
 
-    $('html,body').animate({
+    $("html,body").animate({
       scrollTop: $(this.refs.authBox.getDOMNode()).offset().top
     }, 100)
 
@@ -41,8 +41,8 @@ let AuthBox = React.createClass({
   },
 
   handleFormSubmit() {
-    console.log('Auth Box: Handle Form Submit')
-    if (this.state.action === 'signin') {
+    console.log("Auth Box: Handle Form Submit")
+    if (this.state.action === "signin") {
       this.userSignin()
     } else {
       this.userRegistration()
@@ -58,21 +58,21 @@ let AuthBox = React.createClass({
 
   userSignin() {
     Meteor.loginWithPassword(this.state.email, this.state.password, function(error) {
-      console.log('Error: ', error)
+      console.log("Error: ", error)
     })
   },
 
   userRegistration() {
-    console.log('User is registering')
+    console.log("User is registering")
     Accounts.createUser({
       email: this.state.email,
       password: this.state.password
     }, function(error) {
       if (!error) {
-        console.log('There were no errors registering')
+        console.log("There were no errors registering")
       }
 
-      console.log('Error: ', error)
+      console.log("Error: ", error)
     })
   },
 

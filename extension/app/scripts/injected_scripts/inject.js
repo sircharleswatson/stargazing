@@ -10,13 +10,13 @@ var checkReadyState = setInterval(function() {
     return
   }
 
-  chrome.runtime.sendMessage('test message')
+  chrome.runtime.sendMessage("test message")
 
 }, 10)
 
 
 function ready() {
-  if (document.readyState === 'complete') {
+  if (document.readyState === "complete") {
     return true
   }
 
@@ -24,7 +24,7 @@ function ready() {
 }
 
 function ignoringPage() {
-  var pageUrl = window.location.protocol + '//' + window.location.host
+  var pageUrl = window.location.protocol + "//" + window.location.host
   var ignore = [
     // /localhost/ig,
     /meteor-showers\.meteor\.com/ig,
@@ -33,7 +33,7 @@ function ignoringPage() {
 
   for(var i=0; i<ignore.length; i++){
     if(ignore[i].exec(pageUrl)){
-      console.log('ignoring', pageUrl)
+      console.log("ignoring", pageUrl)
       return true
     }
   }

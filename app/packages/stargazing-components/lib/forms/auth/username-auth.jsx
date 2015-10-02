@@ -4,10 +4,18 @@ const {
 } = Stargazing.Components.Forms.Auth
 
 let UsernameAuth = React.createClass({
-  displayName: 'Username Auth',
+  displayName: "Username Auth",
+
+  propTypes: {
+    action: React.PropTypes.string,
+    email: React.PropTypes.string,
+    onFormSubmit: React.PropTypes.func,
+    onInputChange: React.PropTypes.func,
+    password: React.PropTypes.string
+  },
 
   showForm() {
-    if (this.props.action === 'signin') {
+    if (this.props.action === "signin") {
       return (
         <UsernameSignin 
             email={this.props.email} 
