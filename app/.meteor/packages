@@ -21,3 +21,4 @@ check
 # Application specific packages
 
 stargazing:app
+force-ssl
