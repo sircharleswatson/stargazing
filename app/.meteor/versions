@@ -10,7 +10,6 @@ babel-runtime@0.1.4
 base64@1.0.4
 binary-heap@1.0.4
 blaze@2.1.3
-blaze-html-templates@1.0.1
 blaze-tools@1.0.4
 boilerplate-generator@1.0.4
 caching-compiler@1.0.0
@@ -84,10 +83,10 @@ spacebars@1.0.7
 spacebars-compiler@1.0.7
 srp@1.0.4
 standard-minifiers@1.0.0
-stargazing:app@0.0.0
 stargazing:components@0.0.0
 stargazing:core@0.0.0
-stargazing:routes@0.0.0
+stargazing:lib@0.0.0
+stargazing:router@0.0.0
 stargazing:styles@0.0.0
 templating@1.1.3
 templating-tools@1.0.0

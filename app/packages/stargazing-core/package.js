@@ -1,12 +1,18 @@
 Package.describe({
   name: "stargazing:core",
   version: "0.0.0",
-  summary: "Defines the global namespaces and the application configuration."
+  summary: "Stargazing app Umbrella Package"
 })
 
 Package.onUse(function(api) {
-  api.versionsFrom("1.2")
-  api.use("ecmascript")
-  api.addFiles("common.js")
-  api.export("Stargazing")
+
+  var packages = [
+    "stargazing:lib@0.0.0",
+    "stargazing:styles@0.0.0",
+    "stargazing:components@0.0.0",
+    "stargazing:router@0.0.0"
+  ]
+
+  api.use(packages)
+
 })

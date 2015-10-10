@@ -8,7 +8,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom("1.2")
   api.use([
-    "ecmascript",
+    "stargazing:lib",
     "react",
     "accounts-base",
     "accounts-password",
